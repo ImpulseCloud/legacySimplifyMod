@@ -3888,7 +3888,8 @@ func:function()
 	});
 	new G.Goods({
 		name:'freshwater',
-		desc:'[freshwater], whether found in streams or from rainwater, can be collected for [water] and [muddy water].',
+		//REMOVED: Muddy Water text //'and [muddy water]'
+		desc:'[freshwater], whether found in streams or from rainwater, can be collected for [water].',
 		icon:[15,10],
 		res:{
 			//'gather':{'water':8,'muddy water':8},
