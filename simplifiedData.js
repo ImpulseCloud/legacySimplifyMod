@@ -1373,7 +1373,8 @@ func:function()
 			if (limit>0)
 			{
 				var mult=1;
-				if (G.year<5) mult=1.25;//faster research the first 5 years
+				//REMOVED: Easy Mode first 5 years
+				//if (G.year<5) mult=1.25;//faster research the first 5 years
 				me.amount+=randomFloor(Math.pow(1-me.amount/limit,2)*(Math.random()*amount*me.mult*mult));
 				me.amount=Math.min(me.amount,limit);
 			}
@@ -3857,7 +3858,9 @@ func:function()
 		desc:'A [snow cover] is often available year-long in cold environments, and is a good source of [water]; it may also conceal [ice], which must be dug out.',
 		icon:[13,10],
 		res:{
-			'gather':{'water':4,'muddy water':8},
+			//'gather':{'water':4,'muddy water':8},
+			//REMOVED: Muddy Water source
+			'gather':{'water':4},
 			'dig':{'ice':0.2},
 		},
 		mult:5,
@@ -3888,7 +3891,9 @@ func:function()
 		desc:'[freshwater], whether found in streams or from rainwater, can be collected for [water] and [muddy water].',
 		icon:[15,10],
 		res:{
-			'gather':{'water':8,'muddy water':8},
+			//'gather':{'water':8,'muddy water':8},
+			//REMOVED: Muddy Water source
+			'gather':{'water':8},
 		},
 		mult:5,
 	});
