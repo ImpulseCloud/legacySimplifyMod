@@ -205,6 +205,8 @@ func:function()
 			name:'Food & Water',
 			base:[],
 			side:['food','spoiled food','water','muddy water','food storage'],
+			//REMOVED: Muddy Water reference
+			//side:['food','spoiled food','water','food storage'],
 		},
 		'build':{
 			name:'Crafting & Construction',
@@ -288,13 +290,15 @@ func:function()
 					if (lacking>0)//are we out of water?
 					{
 						//resort to muddy water
-						if (rations!='none' && G.checkPolicy('drink muddy water')=='on') lacking=lacking-G.lose('muddy water',lacking,'drinking');
+            					//REMOVED muddy water
+						//if (rations!='none' && G.checkPolicy('drink muddy water')=='on') lacking=lacking-G.lose('muddy water',lacking,'drinking');
 						if (lacking>0 && G.checkPolicy('disable aging')=='off')//are we also out of muddy water?
 						{
 							G.gain('happiness',-lacking*5,'no water');
 							//die off
 							var toDie=(lacking/5)*0.05;
-							if (G.year<1) toDie/=5;//less deaths in the first year
+							//REMOVED easyMode for First Year deaths
+              //if (G.year<1) toDie/=5;//less deaths in the first year
 							var died=0;
 							var weights={'baby':0.1,'child':0.2,'adult':0.5,'elder':1,'sick':0.3,'wounded':0.3};//the elderly are the first to starve off
 							var sum=0;for (var i in weights){sum+=weights[i];}for (var i in weights){weights[i]/=sum;}//normalize
@@ -826,7 +830,8 @@ func:function()
 			{
 				var toSpoil=me.amount*0.02;
 				var spent=G.lose('water',randomFloor(toSpoil),'decay');
-				G.gain('muddy water',randomFloor(spent),'decay');
+				//REMOVED Muddy Water
+        //G.gain('muddy water',randomFloor(spent),'decay');
 			}
 		},
 	});
@@ -834,6 +839,7 @@ func:function()
 		name:'muddy water',
 		desc:'[muddy water] tastes awful and is unhealthy, but is better than dying of thirst. Your people will default to drinking it in the absence of fresh [water].//Muddy water can be collected while gathering, from stagnant pools or old rainwater; [water] also turns into muddy water over time, if not stored properly. Additionally, muddy water itself will slowly dry out.',
 		icon:[8,6],
+    		//REMOVED: Muddy Water visibility
 		visible:true,
 		turnToByContext:{'drinking':{'health':-0.03,'happiness':-0.05}},
 		tick:function(me,tick)
@@ -1518,9 +1524,11 @@ func:function()
 		//upkeep:{'food':0.2},
 		//alternateUpkeep:{'food':'spoiled food'},
 		effects:[
-			{type:'gather',context:'gather',amount:2,max:4},//,multMax:{'leather pouches':1.1}//TODO
+			{type:'gather',context:'gather',amount:2,max:4},//,multMax:{'leather pouches':1.1}//TODO (use baskets instead???)
 			//{type:'gather',context:'gather',what:{'water':1,'muddy water':1},amount:1,max:3,req:{'gathering focus':'water'}},
-			{type:'gather',context:'gather',what:{'water':1,'muddy water':1},amount:1,max:3},
+			//{type:'gather',context:'gather',what:{'water':1,'muddy water':1},amount:1,max:3},
+      //REMOVED Muddy Water gathering
+			{type:'gather',context:'gather',what:{'water':1},amount:1,max:3},
 			{type:'gather',context:'gather',what:{'herb':0.5,'fruit':0.5},amount:1,max:1,req:{'plant lore':true}},
 			{type:'addFree',what:{'worker':0.1},req:{'scavenging':true}},
 			{type:'mult',value:1.2,req:{'harvest rituals':'on'}}
