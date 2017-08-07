@@ -204,6 +204,7 @@ func:function()
 		'food':{
 			name:'Food & Water',
 			base:[],
+			//REMOVED: Spoiled Food display
 			side:['food','spoiled food','water','muddy water','food storage'],
 			//REMOVED: Muddy Water reference
 			//side:['food','spoiled food','water','food storage'],
@@ -335,7 +336,8 @@ func:function()
 					if (lacking>0)//are we out of food?
 					{
 						//resort to spoiled food
-						if (rations!='none' && G.checkPolicy('eat spoiled food')=='on') lacking=lacking-G.lose('spoiled food',lacking,'eating');
+						//REMOVED: Spoiled Food eating
+						//if (rations!='none' && G.checkPolicy('eat spoiled food')=='on') lacking=lacking-G.lose('spoiled food',lacking,'eating');
 						if (lacking>0 && G.checkPolicy('disable aging')=='off')//are we also out of spoiled food?
 						{
 							G.gain('happiness',-lacking*5,'no food');
@@ -854,7 +856,8 @@ func:function()
 	
 	new G.Res({
 		name:'food',
-		desc:'[food] is consumed by your [population,people] when they get hungry, at the rate of 1 unit per person every 3 ticks (although babies and children eat less).//Some types of food are tastier or healthier than others.//Note that some food types may or may not be eaten depending on policies in place.//Food will slowly decay into [spoiled food] if you lack proper food storage.',
+		desc:'[food] is consumed by your [population,people] when they get hungry, at the rate of 1 unit per person every 3 ticks (although babies and children eat less).//Some types of food are tastier or healthier than others.//Note that some food types may or may not be eaten depending on policies in place.',
+		//REMOVED: Spoiled Food text - //Food will slowly decay into [spoiled food] if you lack proper food storage.',
 		meta:true,
 		visible:true,
 		icon:[3,6],
@@ -894,7 +897,9 @@ func:function()
 		desc:'[herb,Herbs] are various plants, roots and mushrooms that can be collected by simply foraging around. While relatively healthy to eat, they tend to taste fairly unpleasant.',
 		icon:[4,6],
 		startWith:250,
-		turnToByContext:{'eating':{'health':0.005,'happiness':-0.03},'decay':{'herb':0.2,'spoiled food':0.8}},
+		turnToByContext:{'eating':{'health':0.005,'happiness':-0.03},'decay':{'herb':0.2}},
+		//REMOVED: Spoiled Food from Herb
+		//turnToByContext:{'eating':{'health':0.005,'happiness':-0.03},'decay':{'herb':0.2,'spoiled food':0.8}},
 		partOf:'food',
 		category:'food',
 	});
@@ -902,7 +907,9 @@ func:function()
 		name:'fruit',
 		desc:'[fruit,Fruits], whether gathered from berry bushes or fruit trees, are both sweet-tasting and good for you.',
 		icon:[4,7],
-		turnToByContext:{'eating':{'health':0.02,'happiness':0.01},'decay':{'spoiled food':1}},
+		//REMOVED: Spoiled Food from Fruit (will this work to remove the 'decay' turnToByContext??)
+		turnToByContext:{'eating':{'health':0.02,'happiness':0.01}},
+		//turnToByContext:{'eating':{'health':0.02,'happiness':0.01},'decay':{'spoiled food':1}},
 		partOf:'food',
 		category:'food',
 	});
