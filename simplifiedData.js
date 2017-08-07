@@ -204,9 +204,9 @@ func:function()
 		'food':{
 			name:'Food & Water',
 			base:[],
-			side:['food','spoiled food','water','muddy water','food storage'],
+			//side:['food','spoiled food','water','muddy water','food storage'],
 			//REMOVED: Muddy Water reference
-			//side:['food','spoiled food','water','food storage'],
+			side:['food','spoiled food','water','food storage'],
 		},
 		'build':{
 			name:'Crafting & Construction',
@@ -822,7 +822,7 @@ func:function()
 		desc:'[water] is required to keep your [population,people] hydrated, at the rate of half a unit per person every 3 ticks (although babies and children drink less).//Without water, people will resort to drinking [muddy water], which is unhealthy; if that runs out too, your people will simply die off.//Most terrains have some fresh water up for gathering - from ponds, streams and rain; drier locations will have to rely on well digging.//Water turns into [muddy water] over time, if your water storage is insufficient.',
 		icon:[7,6],
 		startWith:250,
-		visible:true,
+		visible:false,
 		turnToByContext:{'drinking':{'health':0.01,'happiness':0}},
 		tick:function(me,tick)
 		{
