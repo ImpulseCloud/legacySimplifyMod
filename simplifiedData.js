@@ -204,9 +204,9 @@ func:function()
 		'food':{
 			name:'Food & Water',
 			base:[],
-			//side:['food','spoiled food','water','muddy water','food storage'],
+			side:['food','spoiled food','water','muddy water','food storage'],
 			//REMOVED: Muddy Water reference
-			side:['food','spoiled food','water','food storage'],
+			//side:['food','spoiled food','water','food storage'],
 		},
 		'build':{
 			name:'Crafting & Construction',
