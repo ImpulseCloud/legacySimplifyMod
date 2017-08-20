@@ -26,5 +26,12 @@ Guiding References:
 Design Specifications: (Simplifying resources/mechanics, Tuning Ratio/Rates, Macromolecules, Leaders)
 1) Simplifying Resources and Mechanics
 2) Tuning Rates and Ratios
-3) Macromolecules
+3) Macromolecules / energy
+  3.1) Track Sugar, Carbohydrates, Protein. Fruit, Bread, Meat. Mind-work, slow-work, strength-work.
+  3.2) Simulate KCals per person. Basal metabolism much lower, forager slightly-higher, digger/miner takes a lot.
 4) Population-attribute bell-curve infographs
+5) Tiered layers, explicitly indicated
+ 5.1) Show how agriculture (Cultivated-gathering) is Level-Up of Found-Gathering. Levels of ease of energy-gain.
+  5.1.1) Agriculture effects an increase in single-tile-availability of renewable-resource? (depends on found-land)
+  5.1.2) Tilling allows for increasing available 'farm'-space land-use in single-tile.
+ 5.2) Show how Tool-Use is Leveled-Up. 1.Hands -> 2.Found -> 3.Hand-Crafted -> 4.Tool-crafted -> 5.Forged
