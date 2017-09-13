@@ -13,6 +13,10 @@ SubReddit0: https://www.reddit.com/r/LegacyTheOrteilGame/
 SubReddit1: https://www.reddit.com/r/NeverEndingLegacy/
 Announcement thread: https://www.reddit.com/r/LegacyTheOrteilGame/comments/6s44t6/starting_work_on_simplifymod_simplifying_the/
 
+*Original Files on http://orteil.dashnet.org/legacy/ --*
+Main Game Code: view-source:http://orteil.dashnet.org/legacy/main.js
+Default Data file (copied and modified in my mod): view-source:http://orteil.dashnet.org/legacy/data.js
+
 Guiding References:
 "Foragers, Farmers, and Fossil Fuels: How Humans Evolved" https://www.amazon.com/Foragers-Farmers-Fossil-Fuels-Values/dp/0691160392
 (discussion: http://www.bradford-delong.com/2017/02/reading-ian-morris-2015-foragers-farmers-and-fossil-fuels-how-human-values-evolve.html)
