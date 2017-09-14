@@ -8,6 +8,8 @@ Second, going to make the subFood have more obvious Tiers and show the actual at
 
 Going to re-tool the food-gathering percentages to make the tribe much more food-gathering dependent early on, and so allow the technology gains (baskets, pots) to have very obviously-impactful effects that allows major changes to tribe labor-distribution ratios.
 
+To use, on a New Game prompt, click "Use Mod", then delete the "data.js" file, and paste in this URL: https://rawgit.com/ImpulseCloud/legacySimplifyMod/master/simplifiedData.js
+
 Forum for DashNet (Cookie Clicker, Legacy, and Idle Game Maker): http://forum.dashnet.org/
 - SubReddit0: https://www.reddit.com/r/LegacyTheOrteilGame/
 - SubReddit1: https://www.reddit.com/r/NeverEndingLegacy/
